@@ -1,0 +1,81 @@
+/* RESET CSS*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'poppins', sans-serif;
+  text-decoration: none;
+  list-style: none;
+}
+
+/* VARIABLES */
+:root {
+--primary: #981483;
+--secondary: #3C0F3F;
+
+--white: #fff;
+--black: #000;
+--light-gray: #c8c8c8;
+--green-bold: #0B624C;
+--green: #047a5c;
+
+--btn-back: #fff;
+--btn-color: #3C0F3F;
+
+--btn-back-hover: #4d1251;
+--btn-color-hover: #fff;
+}
+
+body {
+  background-color: var(--primary);
+}
+
+/* SUBTITLE */
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  .logoMini {
+    width: 62px;
+    height: 62px;
+
+  }
+
+  h1 {
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--white);
+  }
+}
+
+@media (max-width: 431px) {
+  .title {
+    .logoMini {
+      width: 48px;
+      height: 48px;
+    }
+
+    h1 {
+      font-size: 20px;
+    }
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary);
+  border-radius: 10px;
+}
+
+
+
+
+
+
+
