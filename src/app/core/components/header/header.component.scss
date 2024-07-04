@@ -14,23 +14,19 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 30px;
-
     h1 {
       color: var(--white);
       font-weight: 600;
       font-size: 32px;
       text-align: justify;
-
       b {
         font-weight: 900;
       }
     }
-
     span {
       font-size: 20px;
       color: var(--white);
     }
-
     button {
       padding: 12px 60px;
       border: none;
@@ -41,13 +37,8 @@
       font-size: 18px;
       cursor: pointer;
       transition: .5s;
-
-      &:hover {
-        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.366);
-      }
-      &:active {
-        transform: scale(1.02);
-      }
+      &:hover {box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.366);}
+      &:active {transform: scale(1.02);}
     }
   }
 
@@ -84,9 +75,7 @@
         font-size: 14px;
         padding: 10px;
 
-        &::placeholder {
-          color: var(--light-gray);
-        }
+        &::placeholder {color: var(--light-gray);}
       }
     }
 
@@ -104,138 +93,67 @@
   }
 }
 
-@media (max-width: 1190px) {
+@media (max-width: 1185px) {
   .header {
     &__info {
-      margin-top: 50px;
-      h1 {
-        font-size: 32px;
-      }
-
-      span {
-        font-size: 18px;
-      }
-
       button {
-        padding: 10px 30px;
+        padding: 12px 20px;
         font-size: 14px;
-      }
-    }
-    &__form {
-      padding: 32px;
-      h1 {
-        text-align: center;
-        font-size: 20px;
-      }
-      &__inputBox{
-        .labelInput {
-          font-size: 14px;
-        }
-        .inputUser {
-          font-size: 14px;
-        }
       }
     }
   }
 }
-
 @media (max-width: 931px) {
   .header {
     flex-direction: column;
     align-items: center;
-
     &__info {
       margin-top: 50px;
       align-items: center;
       width: 100%;
-      h1 {
-        font-size: 36px;
-      }
+      h1 {font-size: 36px;}
       span {
         font-size: 18px;
         text-align: center;
       }
-      button {
-        padding: 12px 40px;
-        font-size: 16px;
-      }
     }
-    &__form {
-      width: 500px;
-      h1 {
-        font-size: 26px;
-      }
-      &__inputBox{
-        .labelInput {
-          font-size: 18px;
-        }
-        .inputUser {
-          font-size: 18px;
-        }
-      }
-    }
+    &__form {max-width: 500px; width: 100%;}
   }
 }
-
-@media (max-width: 550px) {
-  .header {
-
-    &__form {
-      width: 100%;
-    }
-  }
-}
-
 // MOBILE
 @media (max-width:431px) {
   .header {
     margin-top: 0px;
     flex-direction: column;
-
     // INFORMAÇÕES HEADER
     &__info {
       margin: 30px 0 0;
       width: 100%;
       align-items: center;
-
-      h1 {
-        font-size: 18px;
-      }
-
+      h1 {font-size: 18px;}
       span {
         font-size: 14px;
         text-align: justify;
       }
-
       button {
         padding: 12px 16px;
         font-size: 12px;
       }
     }
-
     // FORMULÁRIO
     &__form {
-
       h1 {
         font-size: 18px;
         text-align: center;
       }
-
       &__inputBox{
-
-        .labelInput {
-          font-size: 12px;
-        }
-
+        .labelInput {font-size: 12px;}
         .inputUser {
           font-size: 12px;
           padding: 8px;
         }
       }
-
-      button {
-        font-size: 14px;
-      }
+      button {font-size: 14px;}
     }
   }
 }

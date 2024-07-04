@@ -1,20 +1,15 @@
-.background {
-  padding: 0 100px;
-}
-
+.background {padding: 0 100px;}
 .h1 {
   max-width: 1500px;
   margin: auto;
   margin-bottom: 20px;
 }
-
 .treinamentos {
   max-width: 1500px;
     margin: auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-
   // DATAS DISPONIVEIS DOS TREINAMENTOS
   &__datas {
     display: flex;
@@ -24,22 +19,16 @@
     gap: 40px;
     margin: 20px 20px 80px;
     width: 100%;
-
     .box:nth-child(1){
       background-color: var(--secondary);
       color: var(--white);
-
       button {
         background-color: var(--btn-back);
         color: var(--btn-color);
         transition: .5s;
-
-        &:hover {
-          box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.366);
-        }
+        &:hover {box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.366);}
       }
     }
-
     .box {
       position: relative;
       display: flex;
@@ -51,12 +40,10 @@
       background-color: var(--light-gray);
       color: var(--secondary);
       border-radius: 16px;
-
       h1, h2 {
         position: relative;
         top: -10px;
       }
-
       button {
         display: flex;
         justify-content: center;
@@ -76,7 +63,6 @@
       }
     }
   }
-
   // CHAMADA PARA SE INSCREVER
   &__chamada {
     width: 100%;
@@ -85,34 +71,29 @@
     border-radius: 24px;
     display: flex;
     height: auto;
-
     img {
       width: 700px;
       height: 100%;
       object-fit: cover;
       border-radius: 24px;
     }
-
     .text {
       padding: 30px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       gap: 35px;
-
       h1 {
         font-size: 36px;
         color: var(--white);
         text-transform: uppercase;
       }
-
       p{
         font-size: 32px;
         text-align: justify;
         font-weight: 300;
         color: var(--white);
       }
-
       button {
         background-color: var(--btn-back);
         color: var(--btn-color);
@@ -123,15 +104,11 @@
         font-weight: bold;
         cursor: pointer;
         transition: .6s;
-
-        &:hover {
-          box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.366);
-        }
+        &:hover {box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.366);}
       }
     }
   }
 }
-
 
 @media (max-width: 1500px) {
   .treinamentos {
@@ -139,7 +116,6 @@
       gap: 50px;
       margin: 30px 20px -30px;
     }
-
     &__chamada {
       margin: 150px 100px 100px;
       background-color: var(--green-bold);
@@ -147,28 +123,23 @@
       display: grid;
       grid-template-columns: 700px 1fr;
       height: auto;
-
       img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         border-radius: 24px;
       }
-
       .text {
         padding: 10px 30px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         gap: 35px;
-
         h1 {
           font-size: 26px;
           text-align: center;
         }
-        p{
-          font-size: 18px;
-        }
+        p{font-size: 18px;}
         button {
           padding: 12px;
           font-size: 18px;
@@ -177,7 +148,6 @@
     }
   }
 }
-
 @media (max-width: 1280px) {
   .treinamentos {
     &__chamada {
@@ -195,9 +165,7 @@
           font-size: 38px;
           text-align: center;
         }
-        p{
-          font-size: 24px;
-        }
+        p{font-size: 24px;}
         button {
           padding: 12px;
           font-size: 18px;
@@ -208,24 +176,19 @@
     }
   }
 }
-
 @media (max-width: 795px) {
   .treinamentos {
     &__chamada {
-
       img {
         height: 300px;
       }
-
       .text {
         padding: 30px;
         h1 {
           font-size: 24px;
           text-align: center;
         }
-        p{
-          font-size: 16px;
-        }
+        p{font-size: 16px;}
         button {
           padding: 12px;
           font-size: 14px;
@@ -236,40 +199,24 @@
     }
   }
 }
-
 @media (max-width: 760px) {
-  .background {
-    padding: 0 20px;
-  }
+  .background {padding: 0 20px;}
 }
-
 // MOBILE
 @media (max-width: 431px) {
   .treinamentos {
-
-    &__title {
-      margin: 50px 20px;
-    }
-
+    &__title {margin: 50px 20px;}
     // DATAS DISPONIVEIS DOS TREINAMENTOS
     &__datas {
       gap: 50px;
       margin: 0px 20px;
-
       .box {
         width: 300px;
         height: 100px;
-
-        h1, h2 {
-          font-size: 18px;
-        }
-
-        button {
-          font-size: 18px;
-        }
+        h1, h2 {font-size: 18px;}
+        button {font-size: 18px;}
       }
     }
-
     // CHAMADA PARA SE INSCREVER
     &__chamada {
       margin: 100px 0px 50px;
@@ -277,22 +224,11 @@
       display: flex;
       flex-direction: column-reverse;
       height: auto;
-
-      img {
-        height: auto;
-      }
-
+      img {height: auto;}
       .text {
         gap: 25px;
-
-        h1 {
-          font-size: 18px;
-        }
-
-        p{
-          font-size: 16px;
-        }
-
+        h1 {font-size: 18px;}
+        p{font-size: 16px;}
         button {
           border-radius: 16px;
           padding: 12px 5px;
