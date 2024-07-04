@@ -18,7 +18,7 @@
       width: 450px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: start;
       align-items: center;
       border-radius: 16px;
       padding: 130px 15px 20px;
@@ -31,6 +31,7 @@
         width: 180px;
         height: 180px;
         border-radius: 50%;
+        border: 2px solid rgb(122, 122, 122);
         box-shadow: 5px 15px 30px rgb(178, 178, 178);
       }
 
@@ -51,6 +52,10 @@
     }
   }
 
+  .background {
+    max-width: 1500px;
+    margin: auto;
+  }
   &__videos {
     margin-top: 100px;
     display: flex;
@@ -83,6 +88,103 @@
   }
  }
 
+ @media (min-width: 1500px) {
+  .depoimentos {
+    h1 {
+      margin-top: 50px;
+    }
+  }
+ }
+
+ @media (max-width: 1295px) {
+  .depoimentos {
+    margin: 0 20px 100px;
+    h1 {
+      font-size: 32px;
+    }
+    &__pessoas {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      .box {
+        h1 {
+          font-size: 18px;
+        }
+        p {
+          padding: 10px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+ }
+
+ @media (max-width: 1050px) {
+  .depoimentos {
+    &__videos {
+      margin-top: 50px;
+      .videos {
+        width: 600px;
+      }
+
+      .depVideo {
+        width: 600px;
+        height: 400px;
+      }
+
+      h1 {
+        font-size: 18px;
+      }
+    }
+  }
+ }
+
+ @media (max-width: 910px) {
+  .depoimentos {
+    margin: 0 20px 100px;
+    h1 {
+      font-size: 36px;
+    }
+    &__pessoas {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 120px;
+      .box {
+        width: 400px;
+        h1 {
+          font-size: 24px;
+        }
+        p {
+          padding: 10px;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+ }
+
+ @media (max-width: 640px) {
+  .depoimentos {
+    &__videos {
+      margin-top: 50px;
+      .videos {
+        width: 400px;
+      }
+
+      .depVideo {
+        width: 400px;
+        height: 200px;
+      }
+
+      h1 {
+        font-size: 18px;
+      }
+    }
+  }
+ }
+
+ // MOBILE
  @media (max-width: 431px) {
   .depoimentos {
     margin: 0 20px 100px;

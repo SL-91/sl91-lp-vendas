@@ -3,6 +3,8 @@
   align-items: center;
   justify-content: space-between;
   padding: 20px 0;
+  max-width: 1500px;
+  margin: auto;
 
   a img {
     width: 200px;
@@ -74,6 +76,7 @@
   display: none;
 }
 
+// MOBILE E TABLET
 @media(max-width: 860px){
   .menu {
       flex-direction: column;
