@@ -5,25 +5,25 @@
     <button>Entre em contato com nosso suporte</button>
   </div>
   <div class="header__form">
-    <form action="#" method="POST" >
+    <form action="#" method="POST" [formGroup]="formHome">
       <h1>Cadastre-se agora mesmo</h1>
       <div class="header__form__inputBox">
         <label for="name" class="labelInput">Nome completo</label>
-        <input type="text" name="name" id="name" class="inputUser" placeholder="Ex: Maria da Silva" [(ngModel)]="nome" required>
+        <input type="text" name="name" id="name" class="inputUser" placeholder="Ex: Maria da Silva" formControlName="nome" required>
       </div>
       <div class="header__form__inputBox">
         <label for="email" class="labelInput">E-mail</label>
-        <input type="email" name="email" id="email" class="inputUser" placeholder="Ex: Maria@gmail.com" [(ngModel)]="email" required>
+        <input type="email" name="email" id="email" class="inputUser" placeholder="Ex: Maria@gmail.com" formControlName="email" required>
       </div>
       <div class="header__form__inputBox">
         <label for="whats" class="labelInput">Telefone (WhatsApp)</label>
-        <input type="tel" name="whats" id="whats" class="inputUser" placeholder="Ex: (XX) 0XXXX-XXXX" [(ngModel)]="telefone" required>
+        <input type="tel" name="whats" id="whats" class="inputUser" placeholder="Ex: (XX) 0XXXX-XXXX" formControlName="telefone" required>
       </div>
       <div class="header__form__inputBox">
         <label for="cidade" class="labelInput">Cidade</label>
-        <input type="text" name="cidade" id="cidade" class="inputUser" [(ngModel)]="cidade" required>
+        <input type="text" name="cidade" id="cidade" class="inputUser" formControlName="cidade" required>
       </div>
+      <button type="submit" (click)="sendForm()">Finalizar cadastro</button>
     </form>
-    <button (click)="sendForm()">Finalizar cadastro</button>
   </div>
 </header>

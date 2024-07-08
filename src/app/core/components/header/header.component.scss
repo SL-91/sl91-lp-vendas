@@ -76,6 +76,14 @@
         padding: 10px;
 
         &::placeholder {color: var(--light-gray);}
+
+        &.ng-valid[required], .ng-valid.required  {
+          border-left: 5px solid #42A948;
+        }
+
+        &.ng-invalid:not(form)  {
+          border-left: 5px solid #a94442; 
+        }
       }
     }
 
@@ -89,6 +97,9 @@
       color: var(--white);
       font-size: 18px;
       cursor: pointer;
+      transition: .2s;
+      &:hover {box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.366);}
+      &:active {transform: scale(1.02);}
     }
   }
 }
