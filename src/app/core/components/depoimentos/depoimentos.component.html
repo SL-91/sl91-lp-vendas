@@ -1,22 +1,25 @@
 <section class="depoimentos">
-  <h1>Confira alguns depoimentos de corretores parceiros</h1>
+  <h1>{{ titleDepoimentos }}</h1>
+  <!-- DEPOIMENTOS BOX PESSOAS -->
   <div class="depoimentos__pessoas">
-    <div class="box">
-      <img src="assets/img/dep.webp" alt="miniatura de um perfil" class="imgDep" width="180" height="180">
-      <h1>Lúis, Salvador</h1>
-      <p>“Conhecer a Corretora SL91 com certeza mudou minha vida. Pude realizar vários sonhos com meu trabalho e o suporte do time.”</p>
-    </div>
-    <div class="box">
-      <img src="assets/img/dep.webp" alt="miniatura de um perfil" class="imgDep" width="180" height="180">
-      <h1>Anderson, Goiânia</h1>
-      <p>“Realmente, de todas as corretoras que passei, a SL91 foi a que me deu o melhor comissionamento. E o pagamento cai certinho!”</p>
-    </div>
-    <div class="box">
-      <img src="assets/img/dep.webp" alt="miniatura de um perfil" class="imgDep" width="180" height="180">
-      <h1>Raquel, Feira de Santana</h1>
-      <p>“A Dária, a Assistente Virtual da SL91, me ajuda todos os dias no momento de fechar vendas.”</p>
-    </div>
+    <app-box-pessoas
+      srcImg="assets/img/dep.webp"
+      altImg="miniatura de um perfil"
+      h1Text="Lúis, Salvador"
+      descriptionText="“Conhecer a Corretora SL91 com certeza mudou minha vida. Pude realizar vários sonhos com meu trabalho e o suporte do time.”"/>
+    <app-box-pessoas
+      srcImg="assets/img/dep.webp"
+      altImg="miniatura de um perfil"
+      h1Text="Anderson, Goiânia"
+      descriptionText="“Realmente, de todas as corretoras que passei, a SL91 foi a que me deu o melhor comissionamento. E o pagamento cai certinho!”"/>
+    <app-box-pessoas
+      srcImg="assets/img/dep.webp"
+      altImg="miniatura de um perfil"
+      h1Text="Raquel, Feira de Santana"
+      descriptionText="“A Dária, a Assistente Virtual da SL91, me ajuda todos os dias no momento de fechar vendas.”"/>
   </div>
+
+  <!-- DEPOIMENTOS BOX VIDEO -->
   <div class="background">
     <div class="depoimentos__videos">
       <div class="videos">

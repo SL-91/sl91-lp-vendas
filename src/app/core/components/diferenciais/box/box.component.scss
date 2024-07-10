@@ -1,0 +1,50 @@
+.diferenciais__box {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 50px;
+  width: 400px;
+  height: 250px;
+  padding: 40px 12px 22px;
+  background-color: var(--white);
+  border-radius: 16px;
+  box-shadow: 3px 3px 20px var(--secondary);
+
+  h1 {
+    font-size: 24px;
+    color: var(--secondary);
+    text-align: center;
+  }
+  img {
+    width: 62px;
+    height: auto !important;
+  }
+}
+// TABLET
+@media (max-width: 1041px) {
+      .diferenciais__box {
+      width: 100%;
+      h1 {
+        font-size: 18px;
+        color: var(--secondary);
+        text-align: center;
+      }
+      img {
+        width: 48px;
+        height: auto;
+      }
+    }
+  }
+// MOBILE
+@media (max-width: 431px) {
+  // BOX
+  .diferenciais__box {
+    h1 {
+      font-size: 22px;
+      color: var(--secondary);
+      text-align: center;
+    }
+  }
+}
+
