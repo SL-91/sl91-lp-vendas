@@ -27,7 +27,7 @@ export class SobreComponent implements AfterViewInit{
       this.description.nativeElement.innerHTML = 'A Corretora SL91 é uma empresa brasileira com 30 anos de experiência no mercado de vendas de Planos de Saúde exclusivos Hapvida NDI. Com uma trajetória marcada pela excelência e qualidade de seus serviços, a empresa tornou-se referência na área de vendas e hoje é uma das maiores corretoras do Brasil';
       this.description2.nativeElement.innerHTML = 'Estamos presentes em 20 praças espalhadas por todo o Brasil, e ao longo de 31 anos de experiência no mercado, já colecionamos mais de x Diamantes.';
       this.button.nativeElement.innerHTML = 'Conheça nossos projetos';
-  } 
+  }
 
   // DEFININDO AS IMAGENS
   public srcLogo = 'assets/img/logoSub.webp';

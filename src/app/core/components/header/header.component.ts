@@ -1,8 +1,9 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { AfterViewInit, Component, ElementRef, inject, ViewChild} from '@angular/core';
+import { AfterViewInit, Component, DoCheck, ElementRef, inject, OnInit, signal, ViewChild} from '@angular/core';
 import { environment } from '../../../../environments/environment';
-import { finalize } from 'rxjs';
+import { finalize, map, Observable } from 'rxjs';
 import { AbstractControl, FormBuilder, FormsModule, ReactiveFormsModule, ValidatorFn, Validators } from '@angular/forms';
+import { JsonPipe } from '@angular/common';
 
 // VALIDANDO O CAMPO 'TELEFONE' PARA RECEBER APENAS NÚMERO
 function numberValidator(): ValidatorFn {
@@ -28,14 +29,23 @@ function stringValidator(): ValidatorFn {
   }
 }
 
+// INTERFACE PADRÃO DA API GET
+interface listEstadosApi {
+  sigla: string,
+}
+
+interface listaCidadesApi {
+  nome: string;
+}
+
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule],
+  imports: [FormsModule, ReactiveFormsModule, JsonPipe],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export class HeaderComponent implements AfterViewInit{
+export class HeaderComponent implements AfterViewInit, OnInit{
 
   // RECEBENDO O IDENTIFICADOR DOS ELEMENTOS
   @ViewChild('h1') public title!: ElementRef;
@@ -53,13 +63,17 @@ export class HeaderComponent implements AfterViewInit{
   #fb = inject(FormBuilder)
 
   // VARIÁVEIS FORMULÁRIO
+  public selecioneEstado = '';
+  public selecioneCidade = '';
   public formHome = this.#fb.group({
     nome: ['', [Validators.required, Validators.minLength(3), stringValidator()]],
-    email: ['', [Validators.required, Validators.email]],
-    telefone: ['', [Validators.required, Validators.minLength(10), numberValidator()]],
+    email: ['', [Validators.required, Validators.email, Validators.pattern(/.+@.+\..+/)]],
+    telefone: ['', [Validators.required, Validators.minLength(11), Validators.maxLength(15),numberValidator()]],
+    estado: ['', [Validators.required]],
     cidade: ['', [Validators.required, Validators.minLength(3), stringValidator()]],
   })
 
+  // INJETANDO AS DEPENDÊNCIAS DO HTPPCLIENT (POST, GET...)
   httpClient = inject(HttpClient)
 
   // FUNÇÃO POST API
@@ -76,6 +90,7 @@ export class HeaderComponent implements AfterViewInit{
             nome: this.formHome.value.nome,
             email: this.formHome.value.email,
             telefone: this.formHome.value.telefone,
+            estado: this.formHome.value.estado,
             cidade: this.formHome.value.cidade,
           }
         ]
@@ -97,8 +112,56 @@ export class HeaderComponent implements AfterViewInit{
       nome: '',
       email: '',
       telefone: '',
+      estado: '',
       cidade: ''
     })
     alert('Registro enviado com sucesso!')
   }
+
+  // PEGANDO A API DO FORMULÁRIO ESTADO
+  #urlEstadosApi = signal(environment.apiEstadosUrl);
+
+  // VARIAVEL QUE SERÁ ARMAZENADA AS INFORMAÇÕES DA API GET
+  public getEstados = signal<null | Array<{
+    sigla: string;
+  }>>(null);
+
+  public cidadesAtivas: string[] = [];
+
+  // FAZENDO UMA REQUISIÇÃO GET PARA BUSCAR OS DADOS
+  public listEstados(): Observable<Array<listEstadosApi>> {
+    return this.httpClient.get<listEstadosApi[]>(this.#urlEstadosApi());
+  }
+
+  public listCidades(estado: string): Observable<Array<listaCidadesApi>> {
+    return this.httpClient.get<listaCidadesApi[]>(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${estado}/municipios`);
+  }
+
+  ngOnInit(): void {
+      this.getEstadosApi();
+      this.getCidadesApi();
+  }
+
+  // TRATANDO OS DADOS DA API ESTADOS
+  public getEstadosApi(){
+    this.listEstados().subscribe({
+      next: (next) => {
+        this.getEstados.set(next);
+      },
+      error: (error) => console.log(error),
+      complete: () => console.log('Complete'),
+    });
+  }
+  // TRATANDO OS DADOS DA API CIDADES
+  public getCidadesApi(){
+    this.formHome.get('estado')?.valueChanges.subscribe((value) => {
+      const estado = value as string;
+      this.listCidades(estado).subscribe((cidades) => {
+        this.cidadesAtivas = cidades.map((cidade)=>{
+          return cidade.nome;
+        })
+      });
+    })
+  }
+
 }

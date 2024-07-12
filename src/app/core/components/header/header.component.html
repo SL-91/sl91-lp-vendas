@@ -9,7 +9,7 @@
       <h1>Cadastre-se agora mesmo</h1>
       <div class="header__form__inputBox">
         <label for="name" class="labelInput">Nome completo</label>
-        <input type="text" name="name" id="name" class="inputUser" placeholder="Ex: Maria da Silva" formControlName="nome" required>
+        <input type="text" name="name" id="name" class="inputUser" placeholder="Ex: Maria da Silva" formControlName="nome" maxlength="50" required>
       </div>
       <div class="header__form__inputBox">
         <label for="email" class="labelInput">E-mail</label>
@@ -17,11 +17,29 @@
       </div>
       <div class="header__form__inputBox">
         <label for="whats" class="labelInput">Telefone (WhatsApp)</label>
-        <input type="tel" name="whats" id="whats" class="inputUser" placeholder="Ex: (XX) 0XXXX-XXXX" formControlName="telefone" required>
+        <input type="tel" name="whats" id="whats" class="inputUser" placeholder="Ex: XX-XXXXX-XXXX" formControlName="telefone" maxlength="15" required>
+      </div>
+      <div class="header__form__inputBox">
+        <label for="estado" class="labelInput">Estado</label>
+        <select type="text" name="estado" id="estado" class="inputUser" formControlName="estado" required >
+          <option [ngValue]="selecioneEstado">Selecione um Estado</option>
+          @for(item of getEstados(); track item){
+            <option class="option"> {{ item.sigla }} </option>
+          } @empty {
+            <p>Loading...</p>
+          }
+        </select>
       </div>
       <div class="header__form__inputBox">
         <label for="cidade" class="labelInput">Cidade</label>
-        <input type="text" name="cidade" id="cidade" class="inputUser" formControlName="cidade" required>
+        <select type="text" name="cidade" id="cidade" class="inputUser" formControlName="cidade" required>
+          <option [ngValue]="selecioneCidade">Selecione uma cidade</option>
+          @for(item of cidadesAtivas; track item){
+            <option> {{ item }}</option>
+          } @empty {
+            <p>Loading...</p>
+          }
+        </select>
       </div>
       <button type="submit" (click)="sendForm()">Finalizar cadastro</button>
     </form>
