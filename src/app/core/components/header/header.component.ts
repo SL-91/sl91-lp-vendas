@@ -3,7 +3,7 @@ import { AfterViewInit, Component, DoCheck, ElementRef, inject, OnInit, signal, 
 import { environment } from '../../../../environments/environment';
 import { finalize, map, Observable } from 'rxjs';
 import { AbstractControl, FormBuilder, FormsModule, ReactiveFormsModule, ValidatorFn, Validators } from '@angular/forms';
-import { JsonPipe } from '@angular/common';
+import { DatePipe, JsonPipe } from '@angular/common';
 
 // VALIDANDO O CAMPO 'TELEFONE' PARA RECEBER APENAS NÚMERO
 function numberValidator(): ValidatorFn {
@@ -83,6 +83,7 @@ export class HeaderComponent implements AfterViewInit, OnInit{
             telefone: this.formHome.value.telefone,
             estado: this.formHome.value.estado,
             cidade: this.formHome.value.cidade,
+            data: new Date().toLocaleString(),
           }
         ]
     }), {headers: headers})
