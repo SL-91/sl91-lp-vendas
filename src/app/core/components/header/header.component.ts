@@ -29,15 +29,6 @@ function stringValidator(): ValidatorFn {
   }
 }
 
-// INTERFACE PADRÃO DA API GET
-interface listEstadosApi {
-  sigla: string,
-}
-
-interface listaCidadesApi {
-  nome: string;
-}
-
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -70,7 +61,7 @@ export class HeaderComponent implements AfterViewInit, OnInit{
     email: ['', [Validators.required, Validators.email, Validators.pattern(/.+@.+\..+/)]],
     telefone: ['', [Validators.required, Validators.minLength(11), Validators.maxLength(15),numberValidator()]],
     estado: ['', [Validators.required]],
-    cidade: ['', [Validators.required, Validators.minLength(3), stringValidator()]],
+    cidade: ['', [Validators.required, Validators.minLength(3)]],
   })
 
   // INJETANDO AS DEPENDÊNCIAS DO HTPPCLIENT (POST, GET...)
@@ -129,12 +120,12 @@ export class HeaderComponent implements AfterViewInit, OnInit{
   public cidadesAtivas: string[] = [];
 
   // FAZENDO UMA REQUISIÇÃO GET PARA BUSCAR OS DADOS
-  public listEstados(): Observable<Array<listEstadosApi>> {
-    return this.httpClient.get<listEstadosApi[]>(this.#urlEstadosApi());
+  public listEstados(): Observable<Array<{sigla: string}>> {
+    return this.httpClient.get<[]>(this.#urlEstadosApi());
   }
 
-  public listCidades(estado: string): Observable<Array<listaCidadesApi>> {
-    return this.httpClient.get<listaCidadesApi[]>(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${estado}/municipios`);
+  public listCidades(estado: string): Observable<Array<{nome: string}>> {
+    return this.httpClient.get<[]>(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${estado}/municipios`);
   }
 
   ngOnInit(): void {
@@ -149,9 +140,9 @@ export class HeaderComponent implements AfterViewInit, OnInit{
         this.getEstados.set(next);
       },
       error: (error) => console.log(error),
-      complete: () => console.log('Complete'),
     });
   }
+
   // TRATANDO OS DADOS DA API CIDADES
   public getCidadesApi(){
     this.formHome.get('estado')?.valueChanges.subscribe((value) => {
@@ -161,6 +152,9 @@ export class HeaderComponent implements AfterViewInit, OnInit{
           return cidade.nome;
         })
       });
+      if (this.formHome.get('cidade')?.valid) {
+        this.formHome.get('cidade')?.patchValue('')
+      }
     })
   }
 
