@@ -5,8 +5,10 @@
   padding: 20px 0;
   max-width: 1500px;
   margin: auto;
+  margin-bottom: 50px;
+
   a img {
-    width: 200px;
+    width: 150px;
     height: auto;
   }
   &__bar {
@@ -17,10 +19,13 @@
     list-style: none;
     position: relative;
     background-color: transparent;
+
     .menu {
       display: flex;
+      align-items: center;
+      gap: 30px;
+
       li {
-        padding-left: 30px;
         a {
           display: inline-block;
           text-decoration: none;
@@ -28,22 +33,27 @@
           text-align: center;
           transition: 0.15s ease-in-out;
           position: relative;
+
+          &:hover {
+            color: rgba(255, 255, 255, 0.764);
+          }
         }
       }
+      &__button {
+      width: 130px;
+      height: 40px;
+      border-radius: 16px;
+      transition: .3s;
+
+      &:hover {
+        transform: translate(-0.5px, -1px);
+        box-shadow: 3px 3px 30px rgba(199, 9, 183, 0.277);
+      }
+    }
     }
   }
 }
-.menu li a::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: var(--white);
-  transition: 0.25s ease-in-out;
-}
-.menu li a:hover:after {width: 100%;}
+
 .open-menu , .close-menu {
   position: absolute;
   color: var(--white);
@@ -63,10 +73,11 @@
 #check {display: none;}
 
 // MOBILE E TABLET
-@media(max-width: 860px){
+@media(max-width: 960px){
   .menu {
+    display: flex;
       flex-direction: column;
-      align-items: end;
+      align-items: flex-end;
       justify-content: start;
       width: 100vw;
       height: 100vh;
@@ -79,22 +90,23 @@
       transition: all 0.2s ease-in-out;
       padding-top: 100px;
   }
-  .menu li a {
-    padding: 10px 3px;
+  .menu li a, button {
     margin-right: 20px;
   }
+
   .open-menu , .close-menu {
     display: block;
   }
   #check:checked ~ .menu {
-    right: 0;}
-
-    .nav {
-
-      a img {
-        width: 100px;
-      }
+    right: 0;
+    align-items: flex-end;
+  }
+  .nav {
+    margin-bottom: 0;
+    a img {
+      width: 100px;
     }
+  }
 }
 
 

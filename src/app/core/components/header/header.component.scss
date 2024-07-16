@@ -19,7 +19,6 @@
       color: var(--white);
       font-weight: 600;
       font-size: clamp(1.5rem, 2vw, 2.5rem);
-      text-align: justify;
 
       b {
         font-weight: 900;
@@ -30,17 +29,16 @@
       color: var(--white);
     }
     button {
-      padding: 12px 40px;
-      border: none;
-      border-radius: 12px;
-      background: var(--btn-back);
-      color: var(--btn-color);
-      font-weight: bold;
-      font-size: 18px;
-      cursor: pointer;
+      width: 100%;
+      height: 50px;
+      border-radius: 16px;
+      font-size: 20px;
       transition: .5s;
-      &:hover {box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.366);}
-      &:active {transform: scale(1.02);}
+
+      &:hover {
+        transform: translate(-0.5px, -1px);
+        box-shadow: 5px 5px 20px rgba(199, 9, 183, 0.277);
+      }
     }
   }
   // FORMULÁRIO
@@ -49,8 +47,11 @@
     height: auto;
     background-color: var(--white);
     border-radius: 16px;
-    padding: 32px;
     box-shadow: 1px 1px 20px var(--secondary);
+
+    form {
+      padding: 30px;
+    }
 
     h1 {
       text-align: center;
@@ -100,16 +101,7 @@
   }
 }
 
-@media (max-width: 1185px) {
-  .header {
-    &__info {
-      button {
-
-        font-size: 14px;
-      }
-    }
-  }
-}
+// TABLET
 @media (max-width: 931px) {
   .header {
     flex-direction: column;
@@ -118,6 +110,15 @@
       margin-top: 50px;
       align-items: center;
       width: 100%;
+      h1 {
+        text-align: center;
+      }
+      button {
+        font-size: 14px;
+        width: 80%;
+        margin: auto;
+        height: 40px;
+      }
     }
     &__form {
       max-width: 450px;
@@ -147,8 +148,11 @@
       margin: 30px 0 0;
       width: 100%;
       align-items: center;
+      h1 {
+        text-align: justify;
+      }
       button {
-        padding: 12px 16px;
+        width: 100%;
         font-size: 12px;
       }
     }

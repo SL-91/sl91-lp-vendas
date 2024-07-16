@@ -1,9 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { AfterViewInit, Component, DoCheck, ElementRef, inject, OnInit, signal, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, inject, OnInit, signal, ViewChild} from '@angular/core';
 import { environment } from '../../../../environments/environment';
 import { finalize, map, Observable } from 'rxjs';
 import { AbstractControl, FormBuilder, FormsModule, ReactiveFormsModule, ValidatorFn, Validators } from '@angular/forms';
-import { DatePipe, JsonPipe } from '@angular/common';
 
 // VALIDANDO O CAMPO 'TELEFONE' PARA RECEBER APENAS NÚMERO
 function numberValidator(): ValidatorFn {
@@ -32,11 +31,14 @@ function stringValidator(): ValidatorFn {
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, JsonPipe],
+  imports: [FormsModule, ReactiveFormsModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent implements AfterViewInit, OnInit{
+
+  // DISPLAY
+  public mobile = window.matchMedia("(max-width:960px)");
 
   // RECEBENDO O IDENTIFICADOR DOS ELEMENTOS
   @ViewChild('h1') public title!: ElementRef;
@@ -45,9 +47,13 @@ export class HeaderComponent implements AfterViewInit, OnInit{
 
   // DEFININDO OS VALORES PARA OS ELEMENTOS DINÂMICAMENTE
   ngAfterViewInit(): void {
-      this.title.nativeElement.innerHTML = 'A <b>Corretora SL91</b> é a corretora exclusiva Hapvida NDI que mais cresce e inova no país.';
-      this.subTitle.nativeElement.innerHTML = 'Junte-se a nós e usufrua do <b>melhor comissionamento</b> do mercado';
-      this.button.nativeElement.innerHTML = 'Entre em contato com nosso suporte';
+      this.title.nativeElement.innerHTML = 'Ganhe até <b>R$5.000,00</b> por mês tornando-se um parceiro da Corretora de Planos de Saúde, SL91.';
+      this.subTitle.nativeElement.innerHTML = 'Alcance sua <b>independência financeira</b> e aproveite os privilégios de ser um corretor SL91.';
+      this.button.nativeElement.innerHTML = 'Conheça nossos projetos';
+
+      if(this.mobile.matches){
+        this.title.nativeElement.innerHTML = "Ganhe até <b>R$5.000,00</b> por mês tornando-se um parceiro da Corretora de Planos de Saúde, SL91.";
+      }
   }
 
   // CRIANDO UMA PROPRIEDADE PRIVADA DO FORMBUILDER

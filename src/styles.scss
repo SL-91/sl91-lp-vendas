@@ -27,7 +27,7 @@
 }
 
 body {
-  background-color: var(--primary);
+  background-color: var(--secondary);
 }
 
 /* SUBTITLE */
@@ -78,6 +78,15 @@ body {
   color: var(--white);
 }
 
+.btnBorderColor {
+  border: solid 2.4px transparent;
+  background-image: linear-gradient(white, rgb(255, 255, 255)), radial-gradient(circle at top left, #981483, #6A1261, #069673);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  cursor: pointer;
+  font-weight: 600;
+  color: #3C0F3F;
+}
 
 
 

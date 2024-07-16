@@ -2,9 +2,10 @@
   <div class="header__info">
     <h1 #h1></h1>
     <span #span></span>
-    <button #btn></button>
+    <button #btn class="btnBorderColor"></button>
   </div>
-  <div class="header__form">
+  
+  <div class="header__form btnBorderColor">
     <form action="#" method="POST" [formGroup]="formHome">
       <h1>Cadastre-se agora mesmo</h1>
       <div class="header__form__inputBox">
@@ -17,7 +18,7 @@
       </div>
       <div class="header__form__inputBox">
         <label for="whats" class="labelInput">Telefone (WhatsApp)</label>
-        <input type="tel" name="whats" id="whats" class="inputUser" placeholder="Ex: XX-XXXXX-XXXX" formControlName="telefone" maxlength="15" required>
+        <input type="tel" name="whats" id="whats" class="inputUser" placeholder="Ex: XX-9XXXX-XXXX" formControlName="telefone" maxlength="15" required>
       </div>
       <div class="header__form__inputBox">
         <label for="estado" class="labelInput">Estado</label>
@@ -33,7 +34,7 @@
       <div class="header__form__inputBox">
         <label for="cidade" class="labelInput">Cidade</label>
         <select type="text" name="cidade" id="cidade" class="inputUser" formControlName="cidade" required>
-          <option [ngValue]="selecioneCidade">Selecione uma cidade</option>
+          <option [ngValue]="selecioneCidade">Selecione uma Cidade</option>
           @for(item of cidadesAtivas; track item){
             <option> {{ item }}</option>
           } @empty {
