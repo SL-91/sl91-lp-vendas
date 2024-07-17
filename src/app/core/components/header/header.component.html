@@ -4,7 +4,7 @@
     <span #span></span>
     <button #btn class="btnBorderColor"></button>
   </div>
-  
+
   <div class="header__form btnBorderColor">
     <form action="#" method="POST" [formGroup]="formHome">
       <h1>Cadastre-se agora mesmo</h1>
@@ -35,7 +35,7 @@
         <label for="cidade" class="labelInput">Cidade</label>
         <select type="text" name="cidade" id="cidade" class="inputUser" formControlName="cidade" required>
           <option [ngValue]="selecioneCidade">Selecione uma Cidade</option>
-          @for(item of cidadesAtivas; track item){
+          @for(item of getCidades; track item){
             <option> {{ item }}</option>
           } @empty {
             <p>Loading...</p>
