@@ -1,8 +1,17 @@
-.background {
-  background-color: var(--white);
-  box-shadow: 1px 1px 20px var(--secondary);
-  padding: 0 100px;
+.separator {
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  background-image: linear-gradient(#232323, #232323), linear-gradient(to right, #981483, #069673);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  margin-bottom: 50px;
+
+  .background {
+    background-color: #232323;
+    padding: 0 100px;
+  }
 }
+
 .processos {
   display: flex;
   flex-direction: column;
@@ -10,44 +19,24 @@
   width: 100%;
   margin: auto;
   margin-bottom: 50px;
+
   &__title {
     padding: 30px 0;
-    h1 {color: var(--primary);}
+    h1 {color: var(--white);}
   }
   // PASSOS DE PROCESSO
   &__passos {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
     gap: 30px;
-    padding-bottom: 50px;
-
   }
 }
 
-@media (max-width: 1165px) {
-  .processos {
-    &__passos {
-      flex-direction: column;
-      align-items: center;
-    }
-  }
-}
 @media (max-width: 760px) {
-  .background {padding: 0 20px;}
-  .processos {
-    &__passos {
-      align-items: stretch;
+  .separator {
+    .background {
+      padding: 0 20px;
     }
   }
-}
-// MOBILE
-@media (max-width: 431px) {
-  .processos {
-    // PASSOS DE PROCESSO
-    &__passos {
-      gap: 20px;
-      padding-bottom: 50px;
-    }
-}
 }

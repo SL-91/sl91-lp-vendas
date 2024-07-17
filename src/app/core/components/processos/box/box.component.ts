@@ -9,6 +9,9 @@ import { Component, Input } from '@angular/core';
 })
 export class BoxComponent {
 
-  @Input()
-  public title: string = '';
+  @Input() public title: string = '';
+  @Input() public span: string = '';
+  @Input() public btn: string | any = '';
+  @Input() public useProperty: any | boolean = false;
+
 }

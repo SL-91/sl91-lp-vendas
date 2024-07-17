@@ -1,13 +1,27 @@
-<div class="background">
-  <section class="processos">
-    <div class="processos__title title">
-      <img [ngSrc]="srcImg" [alt]="altImg" class="logoMini" width="62" height="62">
-      <h1>Entenda o nosso processo de cadastro</h1>
-    </div>
-    <div class="processos__passos">
-      <app-box title="Passo 1"/>
-      <app-box title="Passo 2"/>
-      <app-box title="Passo 3"/>
-    </div>
-  </section>
+<div class="separator">
+  <div class="background">
+    <section class="processos">
+      <div class="processos__title title">
+        <img [ngSrc]="srcImg" [alt]="altImg" class="logoMini" width="62" height="62">
+        <h1>Etapas do processo de aprovação</h1>
+      </div>
+      <div class="processos__passos">
+        <app-box
+          title="CADASTRO"
+          span="Clique em ‘Quero me cadastrar’, preencha seus dados e prepare-se para mudar de vida!"
+          btn="Quero me cadastrar"
+          useProperty="true"/>
+        <app-box
+        title="CONTATO"
+        span="Aguarde o contato do nosso time com as próximas instruções do processo.. É importante verificar também o seu e-mail para não perder nada."
+        />
+        <app-box
+        title="TREINAMENTO"
+        span="É hora de aprender com os MELHORES do mercado, dominar os produtos e também as estratégias de venda."/>
+        <app-box
+        title="COMECE A VENDER"
+        span="Chegou a hora de começar a vender e se preparar para alcançar sua independência financeira."/>
+      </div>
+    </section>
+  </div>
 </div>

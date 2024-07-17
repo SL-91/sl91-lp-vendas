@@ -12,7 +12,7 @@ export class TreinamentosComponent implements AfterViewInit{
   // TITLE
   public srcImg: string = 'assets/img/logoSub.webp';
   public altImg: string = 'Miniaturea do logo';
-  public title: string = 'Calendário de treinamentos'
+  public title: string = 'Acompanhe nosso calendário de treinamentos'
 
   // DATAS
   public cadeadoImg: string = 'assets/img/close.webp'

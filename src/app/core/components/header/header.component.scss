@@ -18,7 +18,7 @@
     h1 {
       color: var(--white);
       font-weight: 600;
-      font-size: clamp(1.5rem, 2vw, 2.5rem);
+      font-size: clamp(1.5rem, 2vw, 3rem);
 
       b {
         font-weight: 900;
@@ -36,7 +36,7 @@
       transition: .5s;
 
       &:hover {
-        transform: translate(-0.5px, -1px);
+        transform: scale(1.02);
         box-shadow: 5px 5px 20px rgba(199, 9, 183, 0.277);
       }
     }
@@ -47,7 +47,9 @@
     height: auto;
     background-color: var(--white);
     border-radius: 16px;
-    box-shadow: 1px 1px 20px var(--secondary);
+    border: 5px solid transparent;
+    box-shadow: 5px 5px 20px var(--primary);
+    cursor: auto;
 
     form {
       padding: 30px;

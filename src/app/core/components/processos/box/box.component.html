@@ -1,1 +1,11 @@
-<div class="box"><b>{{ title }}</b></div>
+<div class="boxEtapas">
+  <div class="spacing" style="padding-left: 10px;">
+    <h1> {{ title }}</h1>
+    <span>{{ span }}</span>
+    @if (useProperty) {
+      <button class="btn"> {{ btn }}</button>
+    } @else {
+      <button style="display: none;"></button>
+    }
+  </div>
+</div>

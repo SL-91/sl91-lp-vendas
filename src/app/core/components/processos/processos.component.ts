@@ -13,4 +13,6 @@ export class ProcessosComponent {
 
   public srcImg: string = 'assets/img/logoSubColor.webp'
   public altImg: string = 'Miniatura do logo colorida'
+  public text: string = '';
+
 }

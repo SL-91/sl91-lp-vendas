@@ -9,8 +9,9 @@
 <div class="home">
   <app-nav />
   <app-header />
-  <hr>
-  <app-sobre />
+  <br>
+  <br>
+  <!-- <app-sobre /> -->
 
   @defer (on viewport) {
     <app-diferenciais />
@@ -38,13 +39,13 @@
     <p class="defer">Carregando a página...</p>
   } @error { <p class="defer">Erro ao carregar!</p> }
 
-  @defer (on viewport) {
+  <!-- @defer (on viewport) {
     <app-depoimentos />
   } @placeholder {
     <p class="defer">Aguardando Servidor.</p>
   } @loading {
     <p class="defer">Carregando a página...</p>
-  } @error { <p class="defer">Erro ao carregar!</p> }
+  } @error { <p class="defer">Erro ao carregar!</p> } -->
 
   <app-footer />
 

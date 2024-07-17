@@ -3,13 +3,14 @@
   margin: auto;
 }
 .title {margin-bottom: 50px;}
+
 // BOX
 .diferenciais {
   width: 100%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 50px;
   margin-bottom: 125px;
 }
 
@@ -22,7 +23,6 @@
       gap: 20px;
   }
 }
-
 // MOBILE
 @media (max-width: 431px) {
   // BOX

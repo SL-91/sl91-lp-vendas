@@ -10,5 +10,5 @@ import { BoxComponent } from './box/box.component';
 })
 export class DiferenciaisComponent {
 
-  public h1: string = 'Nossos diferenciais';
+  public h1: string = 'Vantagens de ser um Corretor SL91';
 }

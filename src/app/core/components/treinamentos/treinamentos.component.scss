@@ -19,47 +19,55 @@
     gap: 40px;
     margin: 20px 20px 80px;
     width: 100%;
-    .box:nth-child(1){
-      background-color: var(--secondary);
-      color: var(--white);
-      button {
-        background-color: var(--btn-back);
-        color: var(--btn-color);
-        transition: .5s;
-        &:hover {box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.366);}
-      }
-    }
+
     .box {
-      position: relative;
       display: flex;
+      width: 300px;
       flex-direction: column;
-      align-items: center;
+      align-items: start;
       justify-content: center;
-      width: 350px;
-      height: 150px;
-      background-color: var(--light-gray);
-      color: var(--secondary);
-      border-radius: 16px;
-      h1, h2 {
-        position: relative;
-        top: -10px;
+      border: solid 2px transparent;
+      background-image: linear-gradient(var(--white), var(--white)), linear-gradient(to bottom, #981483, #6A1261, #069673);
+      background-origin: border-box;
+      background-clip: content-box, border-box;
+      cursor: auto;
+
+      h2 {
+        font-size: 1rem;
       }
+
+      .boxOpen {
+        background-image: linear-gradient(to bottom right, #981483, #66286A, #069673);
+        color: var(--white);
+        width: 100%;
+        button {
+          padding: 0;
+          border: 2px solid transparent;
+          color: #3C0F3F;
+        }
+      }
+
+      .boxClosed {
+        width: 100%;
+        background-color: #3D3D3D;
+        color: var(--white);
+      }
+
       button {
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 10px;
-        position: absolute;
-        bottom: -20px;
+        width: 100%;
         border: none;
         border-radius: 16px;
-        font-size: 24px;
+        font-size: 18px;
         font-weight: bold;
-        width: 90%;
-        padding: 8px;
-        background-color: var(--secondary);
-        color: var(--white);
-        cursor: pointer;
+        margin-top: 20px;
+        padding: 8px 10px;
+        background-color: transparent;
+        color: #AAAAAA;
+        border: 2px solid #AAAAAA;
       }
     }
   }
@@ -112,12 +120,8 @@
 
 @media (max-width: 1500px) {
   .treinamentos {
-    &__datas {
-      gap: 50px;
-      margin: 30px 20px -30px;
-    }
     &__chamada {
-      margin: 150px 100px 100px;
+      margin: 0px 100px 100px;
       background-color: var(--green-bold);
       border-radius: 24px;
       display: grid;
@@ -151,7 +155,7 @@
 @media (max-width: 1280px) {
   .treinamentos {
     &__chamada {
-      margin: 150px 0px 100px;
+      margin: 0px 0px 100px;
       display: flex;
       flex-direction: column-reverse;
       img {
@@ -209,12 +213,10 @@
     // DATAS DISPONIVEIS DOS TREINAMENTOS
     &__datas {
       gap: 50px;
-      margin: 0px 20px;
+      margin: 0px 20px 50px;
       .box {
-        width: 300px;
-        height: 100px;
-        h1, h2 {font-size: 18px;}
-        button {font-size: 18px;}
+        width: 100%;
+        h1, h2, button {font-size: 18px;}
       }
     }
     // CHAMADA PARA SE INSCREVER
