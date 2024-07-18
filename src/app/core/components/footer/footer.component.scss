@@ -7,24 +7,54 @@
   flex-direction: column;
   max-width: 1500px;
   margin: auto;
+
   &__infos {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 300px;
+    height: 270px;
+
     .logoColor {
-      width: 350px;
+      width: 250px;
       height: auto;
     }
     .redes {
       display: flex;
       flex-direction: column;
       gap: 15px;
+
+      h4{
+        color: var(--secondary);
+        font-size: 22px;
+      }
+
+      a {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        font-weight: 500;
+        font-size: 18px;
+        color: var(--secondary);
+
+        &::before {
+          content: '';
+          display: inline-block;
+          width: 24px;
+          height: 24px;
+          background-image: url('/assets/icons/instagram.webp');
+          object-fit: cover;
+        }
+      }
+
+      .youtube {
+        width: 32px;
+        height: 24px;
+        background-image: url('/assets/icons/youtube.webp');
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
     }
-    h4, a {
-      color: var(--secondary);
-      font-size: 22px;
-    }
+
   }
   &__row {
     display: flex;
@@ -49,10 +79,6 @@
       gap: 30px;
       .logoColor {width: 200px;}
       .redes {gap: 5px;}
-      h4, a {
-        color: var(--secondary);
-        font-size: 18px;
-      }
     }
     &__row {
       margin: 0 20px;
@@ -63,20 +89,28 @@
 @media (max-width: 431px) {
   .footer {
     &__infos {
-      padding: 0px 20px;
+      padding: 0px;
       height: 200px;
       gap: 30px;
+
       .logoColor {
         width: 120px;
         height: auto;
       }
-      h4 {
-        padding-left: 10px;
-        font-size: 14px;
-      }
-      a {
-        padding: 10px;
-        font-size: 12px;
+      .redes {
+        h4 {font-size: 14px;}
+        a {
+          font-size: 12px;
+          &::before {
+            width: 18px;
+            height: 18px;
+            background-size: cover;
+          }
+          .youtube {
+            width: 24px;
+            height: 18px;
+          }
+        }
       }
     }
     &__row {

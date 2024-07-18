@@ -9,13 +9,10 @@
 <div class="home">
   <app-nav />
   <app-header />
-  <br>
-  <br>
-  <!-- <app-sobre /> -->
-
-
+  <div class="video">
+    <div class="video__box btnBorderColor">VÍDEO SR ROBERTO SANTOS</div>
+  </div>
   <app-diferenciais />
-
 </div>
 
   @defer (on viewport) {
@@ -34,13 +31,29 @@
     <p class="defer">Carregando a página...</p>
   } @error { <p class="defer">Erro ao carregar!</p> }
 
-  <!-- @defer (on viewport) {
+  @defer (on viewport) {
     <app-depoimentos />
   } @placeholder {
     <p class="defer">Aguardando Servidor.</p>
   } @loading {
     <p class="defer">Carregando a página...</p>
-  } @error { <p class="defer">Erro ao carregar!</p> } -->
+  } @error { <p class="defer">Erro ao carregar!</p> }
+
+  @defer (on viewport) {
+    <app-call-action />
+  } @placeholder {
+    <p class="defer">Aguardando Servidor.</p>
+  } @loading {
+    <p class="defer">Carregando a página...</p>
+  } @error { <p class="defer">Erro ao carregar!</p> }
+
+  @defer (on viewport) {
+    <app-sobre />
+  } @placeholder {
+    <p class="defer">Aguardando Servidor.</p>
+  } @loading {
+    <p class="defer">Carregando a página...</p>
+  } @error { <p class="defer">Erro ao carregar!</p> }
 
   <app-footer />
 

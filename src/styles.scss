@@ -78,6 +78,7 @@ body {
   color: var(--white);
 }
 
+// BORDA DEGRADÊ
 .btnBorderColor {
   border: solid 2px transparent;
   background-image: linear-gradient(var(--white), var(--white)), radial-gradient(circle at top left, #981483, #6A1261, #069673);
@@ -86,6 +87,34 @@ body {
   cursor: pointer;
   font-weight: 600;
   color: #3C0F3F;
+}
+
+// BUTTON COLORIDO
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 5px 12px;
+  background-image: linear-gradient(to right, #981483, #6A1261, #069673);
+  border-radius: 16px;
+  border: none;
+  color: var(--white);
+  font-size: clamp(.9rem, 1vw, 1.1rem);
+  font-weight: bold;
+  transition: .4s;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.03);
+  }
+
+  &::after {
+    content: '🠚';
+    position: relative;
+    font-size: 1.2rem;
+    padding: 3px 6px;
+  }
 }
 
 

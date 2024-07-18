@@ -2,16 +2,15 @@
   max-width: 1500px;
   margin: auto;
 }
-.title {margin-bottom: 50px;}
+.title {margin: 0 0 50px;}
 
 // BOX
 .diferenciais {
-  width: 100%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 50px;
-  margin-bottom: 125px;
+  margin-bottom: 100px;
 }
 
 // TABLET
@@ -19,12 +18,11 @@
   .diferenciais {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr;
       gap: 20px;
   }
 }
 // MOBILE
-@media (max-width: 431px) {
+@media (max-width: 505px) {
   // BOX
 .diferenciais {
   grid-template-columns: 1fr;

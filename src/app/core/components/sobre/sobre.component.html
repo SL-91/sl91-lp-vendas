@@ -1,31 +1,17 @@
-<section class="dados">
-  <div class="dados__infos">
-    <h1>{{ diamantes }}</h1>
-    <p>DIAMANTES</p>
-  </div>
-  <div class="dados__infos">
-    <h1>{{ parceiros }}</h1>
-    <p>PARCEIROS</p>
-  </div>
-  <div class="dados__infos">
-    <h1>{{ mercado }}</h1>
-    <p>DE MERCADO</p>
-  </div>
-</section>
+<div class="background">
+  <section class="sobre" id="sobre">
+    <div class="sobre__text">
+       <div class="title">
+         <img [ngSrc]="srcLogo" [alt]="altLogo" class="logoMini" width="62" height="62">
+         <h1 #titleSobre></h1>
+       </div>
+       <p #description></p>
+       <button #buttonSobre class="btn"></button>
+    </div>
 
-<section class="sobre" id="sobre">
-  <div class="sobre__text">
-     <div class="title">
-       <img [ngSrc]="srcLogo" [alt]="altLogo" class="logoMini" width="62" height="62">
-       <h1 #titleSobre></h1>
-     </div>
-     <p #description></p>
-     <p #description2></p>
-     <button #buttonSobre></button>
-  </div>
-
-  <div class="sobre__img">
-    <img [ngSrc]="srcImg" [alt]="altImg" class="imgSobre" loading="lazy" fill disableOptimizedSrcset>
-  </div>
-</section>
+    <div class="sobre__img">
+      <img [ngSrc]="srcImg" [alt]="altImg" class="imgSobre" loading="lazy" fill disableOptimizedSrcset>
+    </div>
+  </section>
+</div>
 

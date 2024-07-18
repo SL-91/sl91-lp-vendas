@@ -6,14 +6,13 @@
   gap: 35px;
   width: 400px;
   height: 250px;
-  background-color: var(--secondary);
   box-shadow: 1px 5px 20px #30012ac5;
-  border-top: 7px solid transparent !important;
   border: 1px solid transparent;
+  border-top: 7px solid transparent !important;
   background-image: linear-gradient(var(--secondary), #531a56, var(--secondary)), radial-gradient(circle at top left, #981483, #6A1261, #069673);
   background-origin: border-box;
   background-clip: content-box, border-box;
-  transition: .5s;
+  transition: .4s;
 
   &:hover {box-shadow: 1px 5px 20px #5f0453c5;}
   .img {margin-top: 30px;}
@@ -23,14 +22,16 @@
     color: var(--white);
     padding: 0 10px;
     text-align: center;
+    cursor: default;
   }
 }
+
 // TABLET
 @media (max-width: 1041px) {
   .diferenciais__box {
     width: 100%;
     img {
-      width: 48px;
+      width: 52px;
       height: auto;
     }
   }

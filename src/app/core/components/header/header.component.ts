@@ -25,7 +25,7 @@ export class HeaderComponent implements AfterViewInit, OnInit{
 
   // DEFININDO OS VALORES PARA OS ELEMENTOS DINÂMICAMENTE
   ngAfterViewInit(): void {
-    this.title.nativeElement.innerHTML = 'Ganhe até <b>R$5.000,00</b> por mês tornando-se um parceiro da Corretora de Planos de Saúde, SL91.';
+    this.title.nativeElement.innerHTML = 'Ganhe até <b>R$5.000,00</b> por mês tornando-se um parceiro da Corretora de Planos de Saúde, SL91, sem sair de casa.';
     this.subTitle.nativeElement.innerHTML = 'Alcance sua <b>independência financeira</b> e aproveite os privilégios de ser um corretor SL91.';
     this.button.nativeElement.innerHTML = 'Conheça nossos projetos';
 
