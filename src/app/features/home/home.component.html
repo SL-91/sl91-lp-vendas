@@ -7,15 +7,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <div class="home">
-  <app-nav />
+  <app-nav/>
   <app-header />
   <div class="video">
     <div class="video__box btnBorderColor">VÍDEO SR ROBERTO SANTOS</div>
   </div>
-  <app-diferenciais />
+  @defer (on idle; prefetch on viewport) {
+    <app-diferenciais />
+  } @placeholder {
+    <p class="defer">Aguardando Servidor.</p>
+  } @loading {
+    <p class="defer">Carregando a página...</p>
+  } @error { <p class="defer">Erro ao carregar!</p> }
 </div>
 
-  @defer (on viewport) {
+  @defer (on idle; prefetch on viewport) {
     <app-processos />
   } @placeholder {
     <p class="defer">Aguardando Servidor.</p>
@@ -40,14 +46,14 @@
   } @error { <p class="defer">Erro ao carregar!</p> }
 
   @defer (on viewport) {
-    <app-call-action />
+    <app-call-action/>
   } @placeholder {
     <p class="defer">Aguardando Servidor.</p>
   } @loading {
     <p class="defer">Carregando a página...</p>
   } @error { <p class="defer">Erro ao carregar!</p> }
 
-  @defer (on viewport) {
+  @defer (on idle; prefetch on viewport) {
     <app-sobre />
   } @placeholder {
     <p class="defer">Aguardando Servidor.</p>

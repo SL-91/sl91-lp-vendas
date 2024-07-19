@@ -21,8 +21,8 @@ export class CallActionComponent implements AfterViewInit{
 
   ngAfterViewInit(): void {
       this.titleBox.nativeElement.innerHTML = 'Conquiste sua independência financeira!';
-      this.descriptionBox.nativeElement.innerHTML = 'Seja um vendedor de planos de saúde parceiro da SL91 e ganhe até R$5.000,00 por mês trabalhando de casa.';
+      this.descriptionBox.nativeElement.innerHTML = 'Seja um vendedor de planos de saúde parceiro da SL91 e ganhe até R$5.000,00 por mês <b>trabalhando de casa</b>.';
       this.descriptionBox2.nativeElement.innerHTML = 'Realize seus sonhos e aproveite os benefícios de ser um Corretor SL91.';
-      this.btnBox.nativeElement.innerHTML = 'QUERO ME CADASTRAR NA SL91!';
+      this.btnBox.nativeElement.innerHTML = 'QUERO ME CADASTRAR NA SL91';
 }
 }

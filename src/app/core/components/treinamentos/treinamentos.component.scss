@@ -59,11 +59,9 @@
   }
 }
 
-// MOBILE
 @media (max-width: 431px) {
   .treinamentos {
     &__title {margin: 50px 20px;}
-    // DATAS DISPONIVEIS DOS TREINAMENTOS
     &__datas {
       gap: 50px;
       .box { width: 100%; }

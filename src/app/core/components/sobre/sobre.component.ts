@@ -33,4 +33,5 @@ export class SobreComponent implements AfterViewInit{
 
   public srcImg = 'assets/img/sobre.webp';
   public altImg = 'imagem ilustrativa de uma equipe';
+
 }

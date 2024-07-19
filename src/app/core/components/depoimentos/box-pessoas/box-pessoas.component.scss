@@ -27,12 +27,10 @@
       font-size: clamp(1rem, 1.7vw, 1.7rem);
       font-weight:300;
       font-style: italic;
-      text-align: justify;
     }
   }
 }
 
- // MOBILE
  @media (max-width: 600px) {
   .box {
     flex-direction: column;

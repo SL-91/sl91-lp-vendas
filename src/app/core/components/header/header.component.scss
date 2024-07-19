@@ -16,19 +16,19 @@
     h1 {
       color: var(--white);
       font-weight: 600;
-      font-size: clamp(1.7rem, 2.5vw, 2.6rem);
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
     }
     span {
-      font-size: clamp(1rem, 1.5vw, 1.5rem);
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
       color: var(--white);
     }
     button {
-      width: 100%;
-      height: 50px;
+      width: 90%;
+      height: 55px;
       border-radius: 16px;
       font-size: clamp(1rem, 1.5vw, 1.5rem);
       transition: .5s;
-      &:hover { box-shadow: 5px 5px 20px rgba(199, 9, 183, 0.277); }
+      &:hover { box-shadow: 5px 5px 20px rgba(199, 9, 183, 0.437); }
     }
   }
   // FORMULÁRIO
@@ -40,7 +40,16 @@
     border: 5px solid transparent;
     box-shadow: 5px 5px 20px var(--primary);
     cursor: auto;
-    
+
+    .divisoria {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      .es, .ci {
+        width: 100%;
+      }
+    }
+
     form { padding: 30px; }
 
     h1 {
@@ -90,7 +99,6 @@
   }
 }
 
-// TABLET
 @media (max-width: 931px) {
   .header {
     flex-direction: column;
@@ -99,9 +107,7 @@
       margin-top: 0;
       align-items: center;
       width: 100%;
-
       h1, span {text-align: center;}
-
       button {
         width: 80%;
         margin: auto;
@@ -114,7 +120,16 @@
     }
   }
 }
-// MOBILE
+@media (max-width: 460px){
+  .header {
+    &__form{
+      .divisoria {
+        flex-direction: column;
+        gap: 0;
+      }
+    }
+  }
+}
 @media (max-width:431px) {
   .header {
     margin-top: 0px;
@@ -123,8 +138,7 @@
     // INFORMAÇÕES HEADER
     &__info {
       margin: 30px 0 0;
-
-      h1, span { text-align: justify; }
+      h1, span {text-align: start;}
       button { width: 100%; }
     }
   }

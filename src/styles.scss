@@ -12,26 +12,20 @@
 :root {
 --primary: #981483;
 --secondary: #3C0F3F;
-
 --white: #fff;
 --black: #000;
 --light-gray: #c8c8c8;
 --green-bold: #0B624C;
 --green: #047a5c;
-
 --btn-back: #fff;
 --btn-color: #3C0F3F;
-
 --btn-back-hover: #4d1251;
 --btn-color-hover: #fff;
 }
 
-body {
-  background-color: var(--secondary);
-}
+body { background-color: var(--secondary); }
 
 /* SUBTITLE */
-
 .title {
   display: flex;
   align-items: center;
@@ -40,11 +34,10 @@ body {
   .logoMini {
     width: 62px;
     height: 62px;
-
   }
 
   h1 {
-    font-size: 32px;
+    font-size: clamp(1.1rem, 3vw, 2rem);
     font-weight: 600;
     color: var(--white);
   }
@@ -53,29 +46,25 @@ body {
 @media (max-width: 431px) {
   .title {
     .logoMini {
-      width: 48px;
-      height: 48px;
-    }
-
-    h1 {
-      font-size: 20px;
+      width: 42px;
+      height: 42px;
     }
   }
-}
-
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--primary);
-  border-radius: 10px;
 }
 
 .defer {
   text-align: center;
   color: var(--white);
+}
+
+// Scroll-Bar
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
 }
 
 // BORDA DEGRADÊ
@@ -89,13 +78,13 @@ body {
   color: #3C0F3F;
 }
 
-// BUTTON COLORIDO
+// BOTÃO COLORIDO
 .btn {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 5px 12px;
+  padding: 8px 12px;
   background-image: linear-gradient(to right, #981483, #6A1261, #069673);
   border-radius: 16px;
   border: none;
@@ -103,17 +92,11 @@ body {
   font-size: clamp(.9rem, 1vw, 1.1rem);
   font-weight: bold;
   transition: .4s;
+  box-shadow: 1px 1px 20px rgba(199, 9, 183, 0.277);
   cursor: pointer;
 
-  &:hover {
+  &:active {
     transform: scale(1.03);
-  }
-
-  &::after {
-    content: '🠚';
-    position: relative;
-    font-size: 1.2rem;
-    padding: 3px 6px;
   }
 }
 

@@ -1,12 +1,12 @@
 <header class="header" id="header">
   <div class="header__info">
-    <h1 #h1></h1> 
+    <h1 #h1></h1>
     <span #span></span>
     <button #btn class="btnBorderColor"></button>
   </div>
 
   <div class="header__form btnBorderColor">
-    <form action="#" method="POST" [formGroup]="formHome">
+    <form action="#" method="POST" [formGroup]="formHome" id="formulario">
       <h1>Cadastre-se agora mesmo</h1>
       <div class="header__form__inputBox">
         <label for="name" class="labelInput">Nome completo</label>
@@ -21,26 +21,39 @@
         <input type="tel" name="whats" id="whats" class="inputUser" placeholder="Ex: XX-9XXXX-XXXX" formControlName="telefone" maxlength="15" required>
       </div>
       <div class="header__form__inputBox">
-        <label for="estado" class="labelInput">Estado</label>
-        <select type="text" name="estado" id="estado" class="inputUser" formControlName="estado" required >
-          <option [ngValue]="selecioneEstado">Selecione um Estado</option>
-          @for(item of getEstados(); track item){
-            <option class="option"> {{ item.sigla }} </option>
+        <label for="turma" class="labelInput">Turmas</label>
+        <select type="text" name="turma" id="turma" class="inputUser" formControlName="turma" required >
+          <option [ngValue]="selecioneTurma">Selecione uma Turma</option>
+          @for(item of getTurma; track item){
+            <option class="option"> {{ item.turmas }} </option>
           } @empty {
             <p>Loading...</p>
           }
         </select>
       </div>
-      <div class="header__form__inputBox">
-        <label for="cidade" class="labelInput">Cidade</label>
-        <select type="text" name="cidade" id="cidade" class="inputUser" formControlName="cidade" required>
-          <option [ngValue]="selecioneCidade">Selecione uma Cidade</option>
-          @for(item of getCidades; track item){
-            <option> {{ item }}</option>
-          } @empty {
-            <p>Loading...</p>
-          }
-        </select>
+      <div class="divisoria">
+        <div class="header__form__inputBox es">
+          <label for="estado" class="labelInput">Estado</label>
+          <select type="text" name="estado" id="estado" class="inputUser" formControlName="estado" required >
+            <option [ngValue]="selecioneEstado">Selecione um Estado</option>
+            @for(item of getEstados(); track item){
+              <option class="option"> {{ item.sigla }} </option>
+            } @empty {
+              <p>Loading...</p>
+            }
+          </select>
+        </div>
+        <div class="header__form__inputBox ci">
+          <label for="cidade" class="labelInput">Cidade</label>
+          <select type="text" name="cidade" id="cidade" class="inputUser" formControlName="cidade" required>
+            <option [ngValue]="selecioneCidade">Selecione uma Cidade</option>
+            @for(item of getCidades; track item){
+              <option> {{ item }}</option>
+            } @empty {
+              <p>Loading...</p>
+            }
+          </select>
+        </div>
       </div>
       <button type="submit" (click)="sendForm()">Finalizar cadastro</button>
     </form>

@@ -1,10 +1,11 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import {AfterViewInit, Component, ElementRef, inject, OnInit, signal, ViewChild} from '@angular/core';
+import { HttpHeaders } from '@angular/common/http';
+import { AfterViewInit, Component, ElementRef, inject, OnInit, signal, ViewChild} from '@angular/core';
 import { environment } from '../../../../environments/environment';
 import { finalize} from 'rxjs';
 import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ValidatorForm } from '../../../shared/validators/formulario';
 import { ApiService } from '../../../shared/services/api.service';
+import { iTurmas } from '../../../shared/interfaces/global';
 
 @Component({
   selector: 'app-header',
@@ -27,7 +28,7 @@ export class HeaderComponent implements AfterViewInit, OnInit{
   ngAfterViewInit(): void {
     this.title.nativeElement.innerHTML = 'Ganhe até <b>R$5.000,00</b> por mês tornando-se um parceiro da Corretora de Planos de Saúde, SL91, sem sair de casa.';
     this.subTitle.nativeElement.innerHTML = 'Alcance sua <b>independência financeira</b> e aproveite os privilégios de ser um corretor SL91.';
-    this.button.nativeElement.innerHTML = 'Conheça nossos projetos';
+    this.button.nativeElement.innerHTML = 'Entre em contato com o nosso suporte';
 
     if(this.mobile.matches){
       this.title.nativeElement.innerHTML = "Ganhe até <b>R$5.000,00</b> por mês tornando-se um parceiro da Corretora de Planos de Saúde, SL91.";
@@ -37,15 +38,17 @@ export class HeaderComponent implements AfterViewInit, OnInit{
   // INJETANDO AS DEPENDÊNCIAS DOS ARQUIVOS
   fb = inject(FormBuilder)
   ValidatorForm = inject(ValidatorForm);
-  ApiService = inject(ApiService)
+  ApiService = inject(ApiService);
 
   // VARIÁVEIS FORMULÁRIO
+  public selecioneTurma = '';
   public selecioneEstado = '';
   public selecioneCidade = '';
   public formHome = this.fb.group({
     nome: ['', [Validators.required, Validators.minLength(3), this.ValidatorForm.stringValidator()]],
     email: ['', [Validators.required, Validators.email, Validators.pattern(/.+@.+\..+/)]],
     telefone: ['', [Validators.required, Validators.minLength(11), Validators.maxLength(15),this.ValidatorForm.numberValidator()]],
+    turma: ['', [Validators.required]],
     estado: ['', [Validators.required]],
     cidade: ['', [Validators.required, Validators.minLength(3)]],
   })
@@ -66,6 +69,7 @@ export class HeaderComponent implements AfterViewInit, OnInit{
             telefone: this.formHome.value.telefone,
             estado: this.formHome.value.estado,
             cidade: this.formHome.value.cidade,
+            turma: this.formHome.value.turma,
             data: this.getData(),
           }
         ]
@@ -86,6 +90,7 @@ export class HeaderComponent implements AfterViewInit, OnInit{
       nome: '',
       email: '',
       telefone: '',
+      turma: '',
       estado: '',
       cidade: ''
     })
@@ -101,7 +106,16 @@ export class HeaderComponent implements AfterViewInit, OnInit{
   // VARIAVEL QUE SERÁ ARMAZENADA AS INFORMAÇÕES DA API GET
   public getEstados = signal<null | Array<{ sigla: string; }>>(null);
   public getCidades: string[] = [];
+  public getTurma: iTurmas[] = [];
 
+  // TRATANDO OS DADOS DA API TURMA
+  public getTurmasApi() {
+    this.ApiService.listTurma().subscribe(
+      res => {
+        this.getTurma = res;
+      }
+    );
+  }
   // TRATANDO OS DADOS DA API ESTADOS
   public getEstadosApi(){
     this.ApiService.listEstados().subscribe({
@@ -111,7 +125,6 @@ export class HeaderComponent implements AfterViewInit, OnInit{
       error: (error) => console.log(error),
     });
   }
-
   // TRATANDO OS DADOS DA API CIDADES
   public getCidadesApi(){
     this.formHome.get('estado')?.valueChanges.subscribe((value) => {
@@ -130,5 +143,6 @@ export class HeaderComponent implements AfterViewInit, OnInit{
   ngOnInit(): void {
     this.getEstadosApi();
     this.getCidadesApi();
+    this.getTurmasApi();
   }
 }
