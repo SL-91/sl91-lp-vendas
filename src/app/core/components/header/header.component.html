@@ -24,8 +24,8 @@
         <label for="turma" class="labelInput">Turmas</label>
         <select type="text" name="turma" id="turma" class="inputUser" formControlName="turma" required >
           <option [ngValue]="selecioneTurma">Selecione uma Turma</option>
-          @for(item of getTurma; track item){
-            <option class="option"> {{ item.turmas }} </option>
+          @for(item of getTurmas; track item){
+            <option class="option"> {{ item }} </option>
           } @empty {
             <p>Loading...</p>
           }

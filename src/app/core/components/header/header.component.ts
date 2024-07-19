@@ -106,16 +106,19 @@ export class HeaderComponent implements AfterViewInit, OnInit{
   // VARIAVEL QUE SERÁ ARMAZENADA AS INFORMAÇÕES DA API GET
   public getEstados = signal<null | Array<{ sigla: string; }>>(null);
   public getCidades: string[] = [];
-  public getTurma: iTurmas[] = [];
+  public getTurmas: Array<string> = ['11 de Julho', '20 de Julho', '27 de Julho']
+  // public getTurma: iTurmas[] = [];
 
   // TRATANDO OS DADOS DA API TURMA
-  public getTurmasApi() {
-    this.ApiService.listTurma().subscribe(
-      res => {
-        this.getTurma = res;
-      }
-    );
-  }
+  //public getTurmasApi() {
+  //  this.ApiService.listTurma().subscribe(
+  //   res => {
+  //      this.getTurma = res;
+  //      console.log(this.getTurma);
+  //    }
+  // );
+  //}
+
   // TRATANDO OS DADOS DA API ESTADOS
   public getEstadosApi(){
     this.ApiService.listEstados().subscribe({
@@ -143,6 +146,6 @@ export class HeaderComponent implements AfterViewInit, OnInit{
   ngOnInit(): void {
     this.getEstadosApi();
     this.getCidadesApi();
-    this.getTurmasApi();
+    // this.getTurmasApi();
   }
 }
