@@ -42,21 +42,13 @@
           object-fit: cover;
         }
 
-        .linkYoutube {
+        .redes__Youtube {
           padding: 0;
           &::before {
             content: '';
             display: none;
           }
         }
-      }
-
-      .youtube {
-        width: 32px;
-        height: 24px;
-        background-image: url('/assets/icons/youtube.webp');
-        background-repeat: no-repeat;
-        background-size: contain;
       }
     }
 

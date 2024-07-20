@@ -16,17 +16,17 @@
     h1 {
       color: var(--white);
       font-weight: 600;
-      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-size: clamp(1.1rem, 2.5vw, 2rem);
     }
     span {
-      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      font-size: clamp(.8rem, 2.5vw, 1.2rem);
       color: var(--white);
     }
     button {
       width: 90%;
       height: 55px;
       border-radius: 16px;
-      font-size: clamp(1rem, 1.5vw, 1.5rem);
+      font-size: clamp(.7rem, 2vw, 1.2rem);
       transition: .5s;
       &:hover { box-shadow: 5px 5px 20px rgba(199, 9, 183, 0.437); }
     }

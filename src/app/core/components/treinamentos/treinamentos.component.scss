@@ -32,10 +32,12 @@
       .boxOpen {
         background-image: linear-gradient(to bottom right, #981483, #66286A, #069673);
         padding: 30px;
+        a { color: var(--secondary);}
         button {
-          padding: 0;
-          border: 2px solid transparent;
+          background-color: var(--white);
           color: var(--secondary);
+          border: 2px solid var(--primary);
+          cursor: pointer;
         }
       }
       .boxClosed { background-color: #3D3D3D; padding: 30px;}
