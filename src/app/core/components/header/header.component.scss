@@ -13,15 +13,8 @@
     flex-direction: column;
     gap: 30px;
 
-    h1 {
-      color: var(--white);
-      font-weight: 600;
-      font-size: clamp(1.1rem, 2.5vw, 2rem);
-    }
-    span {
-      font-size: clamp(.8rem, 2.5vw, 1.2rem);
-      color: var(--white);
-    }
+    h1 { color: var(--white); font-weight: 600; font-size: clamp(1rem, 2.5vw, 2rem);}
+    span { font-size: clamp(.7rem, 2.5vw, 1.2rem); color: var(--white); }
     button {
       width: 90%;
       height: 55px;
@@ -45,13 +38,9 @@
       display: flex;
       justify-content: space-between;
       gap: 15px;
-      .es, .ci {
-        width: 100%;
-      }
+      .es, .ci { width: 100%;}
     }
-
     form { padding: 30px; }
-
     h1 {
       text-align: center;
       font-size: clamp(1.2rem, 2vw, 2rem);
@@ -65,13 +54,11 @@
       margin-bottom: 10px;
       gap: 5px;
 
-      .labelInput {
-        font-size: clamp(.8rem, 1.8vw, 1rem);
-        font-weight: 400;
-        color: var(--secondary);
-      }
-
+      .labelInput { font-size: clamp(.8rem, 1.8vw, 1rem); font-weight: 400; color: var(--secondary);}
       .inputUser {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
         outline: none;
         border-radius: 10px;
         border: 1px solid rgb(179, 179, 179);
@@ -108,34 +95,21 @@
       align-items: center;
       width: 100%;
       h1, span {text-align: center;}
-      button {
-        width: 80%;
-        margin: auto;
-        height: 50px;
-      }
+      button { width: 80%; margin: auto; height: 50px; }
     }
-    &__form {
-      max-width: 500px;
-      width: 100%;
+    &__form { max-width: 500px; width: 100%;
     }
   }
 }
 @media (max-width: 460px){
   .header {
     &__form{
-      .divisoria {
-        flex-direction: column;
-        gap: 0;
-      }
+      .divisoria { flex-direction: column; gap: 0; }
     }
   }
 }
 @media (max-width:431px) {
-  .header {
-    margin-top: 0px;
-    flex-direction: column;
-
-    // INFORMAÇÕES HEADER
+  .header { margin-top: 0px; flex-direction: column;
     &__info {
       margin: 30px 0 0;
       h1, span {text-align: start;}

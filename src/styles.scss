@@ -19,8 +19,6 @@
 --green: #047a5c;
 --btn-back: #fff;
 --btn-color: #3C0F3F;
---btn-back-hover: #4d1251;
---btn-color-hover: #fff;
 }
 
 body { background-color: var(--secondary); }
@@ -40,27 +38,15 @@ body { background-color: var(--secondary); }
 
 @media (max-width: 431px) {
   .title {
-    .logoMini {
-      width: 42px;
-      height: 42px;
-    }
+    .logoMini { width: 42px; height: 42px; }
   }
 }
 
-.defer {
-  text-align: center;
-  color: var(--white);
-}
+.defer { text-align: center; color: var(--white); }
 
 // Scroll-Bar
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-::-webkit-scrollbar-thumb {
-  background: var(--primary);
-  border-radius: 10px;
-}
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
 
 // BORDA DEGRADÊ
 .btnBorderColor {
@@ -90,9 +76,7 @@ body { background-color: var(--secondary); }
   box-shadow: 1px 1px 20px rgba(199, 9, 183, 0.277);
   cursor: pointer;
 
-  &:active {
-    transform: scale(1.03);
-  }
+  &:active { transform: scale(1.03); }
 }
 
 

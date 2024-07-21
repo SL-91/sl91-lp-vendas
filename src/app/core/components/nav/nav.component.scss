@@ -5,12 +5,7 @@
   padding: 20px 0;
   max-width: 1500px;
   margin: auto;
-
-  a img {
-    width: 160px;
-    height: auto;
-  }
-
+  a img { width: 160px; height: auto; }
   &__bar {
     position: relative;
 
@@ -46,15 +41,8 @@
   font-size: 1.5rem;
   display: none;
 }
-.open-menu {
-  top: 50%;
-  right: 0px;
-  transform: translateY(-50%);
-}
-.close-menu {
-  top: 20px;
-  right: 20px;
-}
+.open-menu { top: 50%; right: 0px; transform: translateY(-50%);}
+.close-menu { top: 20px; right: 20px; }
 #check {display: none;}
 
 @media(max-width: 960px){
@@ -75,10 +63,7 @@
   }
   .menu li a, button { margin-right: 20px; }
   .open-menu , .close-menu { display: block; }
-  #check:checked ~ .menu {
-    right: 0;
-    align-items: flex-end;
-  }
+  #check:checked ~ .menu { right: 0; align-items: flex-end; }
   .nav {
     a img { width: 130px; }
   }

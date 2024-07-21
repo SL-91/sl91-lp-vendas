@@ -1,6 +1,4 @@
-.background {
-  padding: 0 20px;
-}
+.background { padding: 0 20px; }
 
 .sobre {
   display: flex;
@@ -17,10 +15,7 @@
     width: 800px;
     gap: 25px;
 
-    p {
-      font-size: clamp(1rem, 1.3vw, 1.4rem);
-      color: var(--white);
-    }
+    p { font-size: clamp(1rem, 1.3vw, 1.4rem); color: var(--white);}
 
     .btn {
       width: 100%;

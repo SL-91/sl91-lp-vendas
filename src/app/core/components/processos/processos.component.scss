@@ -6,10 +6,7 @@
   background-clip: content-box, border-box;
   margin-bottom: 50px;
 
-  .background {
-    background-color: #232323;
-    padding: 0 20px;
-  }
+  .background { background-color: #232323; padding: 0 20px; }
 }
 .processos {
   display: flex;
@@ -19,14 +16,7 @@
   margin: auto;
   margin-bottom: 50px;
 
-  &__title {
-    padding: 30px 0;
-  }
-  // PASSOS DE PROCESSO
-  &__passos {
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-  }
+  &__title { padding: 30px 0; }
+  &__passos { display: flex; flex-direction: column; gap: 50px; }
 }
 

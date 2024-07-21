@@ -1,7 +1,4 @@
-.dif {
-  max-width: 1500px;
-  margin: auto;
-}
+.dif { max-width: 1500px; margin: auto; }
 .title {margin: 0 0 50px;}
 
 // BOX
@@ -14,15 +11,8 @@
 }
 
 @media (max-width: 1041px) {
-  .diferenciais {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-  }
+  .diferenciais { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 }
 @media (max-width: 505px) {
-  // BOX
-.diferenciais {
-  grid-template-columns: 1fr;
-}
+  .diferenciais { grid-template-columns: 1fr;}
 }
