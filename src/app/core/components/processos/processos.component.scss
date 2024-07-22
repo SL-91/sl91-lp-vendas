@@ -1,12 +1,12 @@
 .separator {
   border-top: 5px solid transparent;
   border-bottom: 5px solid transparent;
-  background-image: linear-gradient(#232323, #232323), linear-gradient(to right, #981483, #069673);
+  background-image: linear-gradient(#262626, #262626), linear-gradient(to right, #981483, #069673);
   background-origin: border-box;
   background-clip: content-box, border-box;
   margin-bottom: 50px;
 
-  .background { background-color: #232323; padding: 0 20px; }
+  .background { background-color: #262626; padding: 0 20px; }
 }
 .processos {
   display: flex;

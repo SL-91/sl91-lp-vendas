@@ -6,7 +6,7 @@
   </div>
 
   <div class="header__form btnBorderColor">
-    <form action="#" method="POST" [formGroup]="formHome" id="formulario">
+    <form action="#" method="POST" [formGroup]="formHome" id="formulario" (change)="checkBtn()">
       <h1>Cadastre-se agora mesmo</h1>
       <div class="header__form__inputBox">
         <label for="name" class="labelInput">Nome completo</label>
@@ -55,7 +55,7 @@
           </select>
         </div>
       </div>
-      <button type="submit" (click)="sendForm()">Finalizar cadastro</button>
+      <button type="submit" (click)="sendForm()" [disabled]="isTrue">Finalizar cadastro</button>
     </form>
   </div>
 </header>

@@ -53,6 +53,18 @@ export class HeaderComponent implements AfterViewInit, OnInit{
     cidade: ['', [Validators.required, Validators.minLength(3)]],
   })
 
+  // BUTTON
+  public isTrue: boolean = true;
+
+  // VERIFICA SE O FORMULÁRIO É VÁLIDO E DISABILITA OU HABILITA O BOTÃO.
+  checkBtn(){
+    if (this.formHome.valid) {
+      this.isTrue = false;
+    } else {
+      this.isTrue = true
+    }
+  }
+
   // FUNÇÃO POST API
   public sendForm(){
     // VERIFICANDO SE O FORMULÁRIO É VALIDO, SE FOR...
@@ -77,10 +89,10 @@ export class HeaderComponent implements AfterViewInit, OnInit{
     // CONFIGURAÇÃO 'FINALIZE()', ADICIONA UMA FUNÇÃO PARA LIMPAR O FORMULÁRIO APÓS O ENVIO DE DADOS.
     .pipe(finalize(() => {
       this.clearForm()
+      this.isTrue = true;
     })).subscribe()
-    } else {
-      // SE O FORMULÁRIO NÃO ESTIVER VÁLIDO
-      alert ('Preencha todas informações!')
+    } else if (!this.formHome.valid){
+      this.isTrue = true;
     }
   }
 
