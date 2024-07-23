@@ -1,18 +1,18 @@
 <section class="depoimentos">
   <h1>{{ titleDepoimentos }}</h1>
- 
+
   <!-- DEPOIMENTOS BOX VIDEO -->
   <div class="background">
-    <div class="depoimentos__videos">
-      <div class="videos">
-        <img src="assets/img/depVideo.webp" alt="imagem ilustrativa de uma pessoa" class="depVideo" width="1000" height="500">
-        <h1>Roberto, Praça de Salvador</h1>
-      </div>
-      <div class="videos">
-        <img src="assets/img/depVideo.webp" alt="imagem ilustrativa de uma pessoa" class="depVideo" width="1000" height="500">
-        <h1>Roberto, Praça de Salvador</h1>
-      </div>
-    </div>
+    <swiper-container class="video" init="false">
+      <swiper-slide lazy="true">
+        <img src="assets/img/depVideo.webp" alt="imagem ilustrativa de uma pessoa" class="depVideo" loading="lazy">
+    <h1>Roberto, Praça de Salvador</h1>
+      </swiper-slide>
+      <swiper-slide>
+        <img src="assets/img/depVideo.webp" alt="imagem ilustrativa de uma pessoa" class="depVideo" loading="lazy">
+    <h1>Lílian, Praça de Recife</h1>
+      </swiper-slide>
+    </swiper-container>
   </div>
 
   <!-- DEPOIMENTOS BOX PESSOAS -->

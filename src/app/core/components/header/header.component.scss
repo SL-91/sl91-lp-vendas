@@ -13,8 +13,8 @@
     flex-direction: column;
     gap: 30px;
 
-    h1 { color: var(--white); font-weight: 600; font-size: clamp(1rem, 2.5vw, 2rem);}
-    span { font-size: clamp(.7rem, 2.5vw, 1.2rem); color: var(--white); }
+    h1 { color: var(--white); font-weight: 600; font-size: clamp(.9rem, 2.5vw, 2rem);}
+    span { font-size: clamp(.8rem, 2.5vw, 1.2rem); color: var(--white); }
     button {
       width: 90%;
       height: 55px;
@@ -94,7 +94,7 @@
       align-items: center;
       width: 100%;
       h1, span {text-align: center;}
-      button { width: 80%; margin: auto; height: 50px; }
+      button { width: 80%; margin: auto; height: 40px; }
     }
     &__form { max-width: 500px; width: 100%;
     }
