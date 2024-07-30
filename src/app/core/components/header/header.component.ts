@@ -5,12 +5,14 @@ import { finalize} from 'rxjs';
 import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ValidatorForm } from '../../../shared/validators/formulario';
 import { ApiService } from '../../../shared/services/api.service';
-import { iTurmas } from '../../../shared/interfaces/global';
+import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
+
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule],
+  imports: [FormsModule, ReactiveFormsModule, NgxMaskDirective],
+  providers: [provideNgxMask({})],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
@@ -47,7 +49,7 @@ export class HeaderComponent implements AfterViewInit, OnInit{
   public formHome = this.fb.group({
     nome: ['', [Validators.required, Validators.minLength(3), this.ValidatorForm.stringValidator()]],
     email: ['', [Validators.required, Validators.email, Validators.pattern(/.+@.+\..+/)]],
-    telefone: ['', [Validators.required, Validators.minLength(11), Validators.maxLength(15),this.ValidatorForm.numberValidator()]],
+    telefone: ['', [Validators.required, this.ValidatorForm.numberValidator()]],
     turma: ['', [Validators.required]],
     estado: ['', [Validators.required]],
     cidade: ['', [Validators.required, Validators.minLength(3)]],
@@ -118,27 +120,18 @@ export class HeaderComponent implements AfterViewInit, OnInit{
   // VARIAVEL QUE SERÁ ARMAZENADA AS INFORMAÇÕES DA API GET
   public getEstados = signal<null | Array<{ sigla: string; }>>(null);
   public getCidades: string[] = [];
-  public getTurmas: Array<string> = ['11 de Julho', '20 de Julho', '27 de Julho']
-  // public getTurma: iTurmas[] = [];
-
-  // TRATANDO OS DADOS DA API TURMA
-  //public getTurmasApi() {
-  //  this.ApiService.listTurma().subscribe(
-  //   res => {
-  //      this.getTurma = res;
-  //      console.log(this.getTurma);
-  //    }
-  // );
-  //}
+  public getTurmas: Array<string> = ['11 de Julho', '20 de Julho', '27 de Julho'];
 
   // TRATANDO OS DADOS DA API ESTADOS
   public getEstadosApi(){
+    this.getEstados.set(null);
     this.ApiService.listEstados().subscribe({
       next: (next) => {
         this.getEstados.set(next);
       },
       error: (error) => console.log(error),
     });
+
   }
   // TRATANDO OS DADOS DA API CIDADES
   public getCidadesApi(){

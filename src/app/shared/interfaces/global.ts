@@ -1,3 +1,3 @@
-export interface iTurmas {
-  turmas: string;
+export interface estados {
+  siglas: string;
 }

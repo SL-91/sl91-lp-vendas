@@ -1,10 +1,10 @@
-import { NgOptimizedImage } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-nav',
   standalone: true,
-  imports: [NgOptimizedImage],
+  imports: [CommonModule, NgOptimizedImage],
   templateUrl: './nav.component.html',
   styleUrl: './nav.component.scss'
 })
