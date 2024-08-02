@@ -16,7 +16,7 @@ registerSwiperElements();
 
 export class DepoimentosComponent implements OnInit{
 
-  public titleDepoimentos: string = 'Confira alguns depoimentos de corretores parceiros';
+  public titleDepoimentos: string = 'Confira o depoimento de uma das nossas parceiras';
 
   swiperElement = signal<SwiperContainer | null>(null);
 
